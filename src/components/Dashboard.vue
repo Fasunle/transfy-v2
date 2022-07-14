@@ -1,36 +1,7 @@
 <template>
   <main class="grid grid-cols-1 md:grid-cols-12 md:grid-rows-6 gap-8 p-8">
     <div class="md:col-span-3 md:row-span-full shadow-lg rounded-md py-4 px-8 h-min">
-      <h1 class="text-center font-bold text-2xl text-green-400 my-4">User Information</h1>
-
-      <div class="flex justify-between">
-        <p>Account Balance</p>
-        <span>$90,000</span>
-      </div>
-
-      <div class="flex justify-between mt-4">
-        <h2>Account Name</h2>
-        <p>Kehinde Fasunle</p>
-      </div>
-
-      <div class="mt-4">
-        <h2 class="text-lg text-emerald-500">Most Recent Transaction</h2>
-
-        <div class="py-2">
-          <div class="flex justify-around shadow-md rounded-lg p-2">
-            <span class="bg-green-200 rounded-md p-2">DEPOSIT</span>
-            <span class=" rounded-sm p-2">$200</span>
-          </div>
-          <div class="flex justify-around shadow-md rounded-lg p-2">
-            <span class="bg-green-200 rounded-md p-2">DEPOSIT</span>
-            <span class=" rounded-sm p-2">$200</span>
-          </div>
-          <div class="flex justify-around shadow-md rounded-lg p-2">
-            <span class="bg-green-200 rounded-md p-2">DEPOSIT</span>
-            <span class=" rounded-sm p-2">$200</span>
-          </div>
-        </div>
-      </div>
+      <UserProfile :user="user"/>
     </div>
 
     <div class="md:col-start-4 md:row-start-2 md:row-span-full md:col-end-13 shadow-lg rounded-md p-4">
@@ -56,11 +27,15 @@
 </template>
 
 <script>
-import Transaction from './Transaction.vue'
+import Transaction from './Transaction.vue';
+import UserProfile from './UserProfile.vue';
+import { useUserStore } from "../store";
+
 export default {
   name: "Dashboard",
   components: {
-    "Transaction": Transaction
+    "Transaction": Transaction,
+    "UserProfile": UserProfile
   },
   data(){
     return {
@@ -95,6 +70,13 @@ export default {
         },
       ]
     }
+  },
+  setup(){
+      const store = useUserStore();
+
+      return {
+          user: store.user
+      }
   }
 }
 </script>
