@@ -7,7 +7,7 @@
                 <img v-if="closeMenu" @click="toggle" src="../assets/menu-icon.svg" alt="menu hamburger icon">
                 <img v-else @click="toggle" src="../assets/close-icon.svg" alt="close menu icon">
             </div>
-            <h1>Transfy</h1>
+            <h1 class="font-semibold text-3xl">Transfy</h1>
         </div>
 
         <ul class="hidden sm:flex w-2/3 justify-around items-center">
