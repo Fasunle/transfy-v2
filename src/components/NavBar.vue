@@ -1,13 +1,14 @@
 <template>
   <header>
-    <nav>
-        <div>
+    <nav class="p-4 flex justify-between">
+
+        <div class="flex place-items-center place-content-between">
             <div class="w-8 h-8 p-2 flex place-content-center">
                 <img src="../assets/menu-icon.svg" alt="menu icon">
             </div>
             <h1>Transfy</h1>
         </div>
-        <ul>
+        <ul class="hidden">
             <li>
                 <router-link to="/">Dashboard</router-link>
             </li>
