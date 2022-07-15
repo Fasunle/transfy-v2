@@ -11,13 +11,13 @@
         </div>
 
         <ul class="hidden sm:flex w-2/3 justify-around items-center">
-            <li>
+            <li class="p-2">
                 <router-link to="/">Dashboard</router-link>
             </li>
-            <li>
+            <li class="p-2">
                 <router-link to="/login">Login</router-link>
             </li>
-            <li>
+            <li class="p-2">
                 <router-link to="/logout">Logout</router-link>
             </li>
         </ul>
