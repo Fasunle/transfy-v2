@@ -10,7 +10,7 @@
             <h1 class="font-semibold text-3xl">Transfy</h1>
         </div>
 
-        <ul class="hidden sm:flex w-2/3 justify-around items-center">
+        <ul class="hidden sm:flex w-1/4 justify-around items-center">
             <li class="p-2">
                 <router-link to="/">Dashboard</router-link>
             </li>
