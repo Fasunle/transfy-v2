@@ -2,7 +2,7 @@
   <header>
     <nav>
         <div>
-            <div>
+            <div class="w-8 h-8 p-2 flex place-content-center">
                 <img src="../assets/menu-icon.svg" alt="menu icon">
             </div>
             <h1>Transfy</h1>
@@ -18,8 +18,8 @@
                 <router-link to="/logout">Logout</router-link>
             </li>
         </ul>
-        <div>
-            <img src="../assets/user.png" alt="Current User">
+        <div class="w-12 h-12">
+            <img class="rounded-full" src="../assets/user.png" alt="Current User">
         </div>
     </nav>
   </header>
