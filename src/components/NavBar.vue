@@ -25,6 +25,20 @@
             <img class="rounded-full" src="../assets/user.png" alt="Current User">
         </div>
     </nav>
+    <!-- display this on smaller screen -->
+    <nav  :class="closeMenu && 'hidden'">
+        <ul class="text-center my-4 font-medium sm:hidden">
+            <li class="mt-4 p-2">
+                <router-link to="/">Dashboard</router-link>
+            </li>
+            <li class="mt-4 p-2">
+                <router-link to="/login">Login</router-link>
+            </li>
+            <li class="mt-4 p-2">
+                <router-link to="/logout">Logout</router-link>
+            </li>
+        </ul>
+    </nav>
   </header>
 </template>
 
