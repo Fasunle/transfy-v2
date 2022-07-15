@@ -9,7 +9,7 @@
             <h1>Transfy</h1>
         </div>
 
-        <ul class="hidden">
+        <ul class="hidden sm:flex w-2/3 justify-around items-center">
             <li>
                 <router-link to="/">Dashboard</router-link>
             </li>
