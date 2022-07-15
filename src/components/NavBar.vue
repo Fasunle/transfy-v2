@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="p-4 flex justify-between">
+    <nav class="p-4 flex justify-between max-w-screen-lg mx-auto">
 
         <div class="flex place-items-center place-content-between">
             <div class="w-8 h-8 p-2 flex place-content-center">
@@ -8,6 +8,7 @@
             </div>
             <h1>Transfy</h1>
         </div>
+
         <ul class="hidden">
             <li>
                 <router-link to="/">Dashboard</router-link>
