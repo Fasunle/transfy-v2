@@ -14,10 +14,10 @@
             <li class="p-2">
                 <router-link to="/">Dashboard</router-link>
             </li>
-            <li class="p-2">
+            <li class="p-2" v-if="!isAuthenticated">
                 <router-link to="/login">Login</router-link>
             </li>
-            <li class="p-2">
+            <li class="p-2" v-else>
                 <router-link to="/logout">Logout</router-link>
             </li>
         </ul>
@@ -31,10 +31,10 @@
             <li class="mt-4 p-2">
                 <router-link to="/">Dashboard</router-link>
             </li>
-            <li class="mt-4 p-2">
+            <li class="mt-4 p-2"  v-if="!isAuthenticated">
                 <router-link to="/login">Login</router-link>
             </li>
-            <li class="mt-4 p-2">
+            <li class="mt-4 p-2" v-else>
                 <router-link to="/logout">Logout</router-link>
             </li>
         </ul>
@@ -47,7 +47,8 @@
         name: "NavBar",
         data(){
             return {
-                closeMenu: false
+                closeMenu: false,
+                isAuthenticated: false
             }
         },
         methods: {
