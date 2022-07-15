@@ -4,7 +4,8 @@
 
         <div class="flex place-items-center place-content-between">
             <div class="w-8 h-8 p-2 flex place-content-center">
-                <img src="../assets/menu-icon.svg" alt="menu icon">
+                <img v-if="closeMenu" @click="toggle" src="../assets/menu-icon.svg" alt="menu hamburger icon">
+                <img v-else @click="toggle" src="../assets/close-icon.svg" alt="close menu icon">
             </div>
             <h1>Transfy</h1>
         </div>
@@ -29,6 +30,16 @@
 
 <script>
     export default {
-        name: "NavBar"
+        name: "NavBar",
+        data(){
+            return {
+                closeMenu: false
+            }
+        },
+        methods: {
+            toggle(){
+                this.closeMenu = !this.closeMenu;
+            }
+        }
     }
 </script>
