@@ -3,7 +3,7 @@
     <nav class="p-4 flex justify-between max-w-screen-lg mx-auto">
 
         <div class="flex place-items-center place-content-between">
-            <div class="w-8 h-8 p-2 flex place-content-center">
+            <div class="w-8 h-8 p-2 flex place-content-center sm:hidden">
                 <img v-if="closeMenu" @click="toggle" src="../assets/menu-icon.svg" alt="menu hamburger icon">
                 <img v-else @click="toggle" src="../assets/close-icon.svg" alt="close menu icon">
             </div>
