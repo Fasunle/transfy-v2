@@ -26,8 +26,8 @@
         </div>
     </nav>
     <!-- display this on smaller screen -->
-    <nav  :class="closeMenu && 'hidden'">
-        <ul class="text-center my-4 font-medium sm:hidden">
+    <nav  :class="closeMenu && 'hidden'" class="absolute z-10 inset-0 top-20 bg-gray-50 sm:hidden">
+        <ul class="text-center my-4 font-medium">
             <li class="mt-4 p-2">
                 <router-link to="/">Dashboard</router-link>
             </li>
