@@ -12,13 +12,13 @@
 
         <ul class="hidden sm:flex w-1/4 justify-around items-center">
             <li class="p-2">
-                <router-link to="/">Dashboard</router-link>
+                <router-link to="/dashboard">Dashboard</router-link>
             </li>
             <li class="p-2" v-if="!isAuthenticated">
-                <router-link to="/login">Login</router-link>
+                <button>Login</button>
             </li>
             <li class="p-2" v-else>
-                <router-link to="/logout">Logout</router-link>
+                <button>Logout</button>
             </li>
         </ul>
         <div class="w-12 h-12">
@@ -29,13 +29,29 @@
     <nav  :class="closeMenu && 'hidden'" class="absolute z-10 inset-0 top-20 bg-gray-50 sm:hidden">
         <ul class="text-center my-4 font-medium">
             <li class="mt-4 p-2">
-                <router-link to="/">Dashboard</router-link>
+                <router-link to="/dashboard">Dashboard</router-link>
             </li>
             <li class="mt-4 p-2"  v-if="!isAuthenticated">
-                <router-link to="/login">Login</router-link>
+                <button>Login</button>
             </li>
             <li class="mt-4 p-2" v-else>
-                <router-link to="/logout">Logout</router-link>
+                <button>Logout</button>
+            </li>
+
+            <li class="mt-4 p-2">
+                <router-link  to="/countries">Countries</router-link>
+            </li>
+
+            <li class="mt-4 p-2">
+                <router-link  to="/balances">Balances</router-link>
+            </li>
+
+            <li class="mt-4 p-2">
+                <router-link  to="/orders">Orders</router-link>
+            </li>
+
+            <li class="mt-4 p-2">
+                <router-link  to="/get-info">Get-Info</router-link>
             </li>
         </ul>
     </nav>
