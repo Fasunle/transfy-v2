@@ -1,31 +1,26 @@
 <template>
-  <nav class="bg-teal-500 flex px-4 justify-between items-center">
-    <h1 class="text-black text-3xl font-bold">Transfy</h1>
-    <ul class="flex">
-      <li class="bg-yellow-400 p-2 rounded-lg">
-        <router-link to="/">Dashboard</router-link>
-      </li>
-      <li class="ml-4 bg-yellow-400 p-2 rounded-lg">
-        <router-link to="/signin">Sign In</router-link>
-      </li>
-    </ul>
-
-    <div class="flex items-center justify-center">
-      <span>{{store.user.username}}</span>
-      <div class="ml-4">
-        <img class="w-16 h-16 rounded-full p-4" src="./assets/user.png" alt="User">
-      </div>
+  <NavBar />
+  <main class="flex gap-4 flex-col sm:flex-row items-center sm:items-start">
+    <Home class="hidden sm:block" />
+    <div class="w-full">
+      <router-view/>
     </div>
-  </nav>
-  <router-view/>
+
+  </main>
 </template>
 
 <script>
 
 import {useUserStore} from "./store";
+import Home from "./components/Home.vue";
+import NavBar from "./components/NavBar.vue";
 
 export default {
   name: 'App',
+  components: {
+    Home,
+    NavBar
+  },
   setup(){
     const store = useUserStore();
 
