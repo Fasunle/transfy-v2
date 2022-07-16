@@ -11,7 +11,7 @@
 
 <script>
 
-import {useUserStore} from "./store";
+import {useUserStore} from "./store/user";
 import Home from "./components/Home.vue";
 import NavBar from "./components/NavBar.vue";
 
