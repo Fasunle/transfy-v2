@@ -1,7 +1,7 @@
 <template>
   <aside>
       <nav>
-        <ul class="sidebar w-32 p-4 flex flex-col h-64 justify-start items-center text-gray-600">
+        <ul class="sidebar pl-4 pt-16 w-32 flex flex-col h-64 justify-start items-center text-gray-600">
 
           <li class="p-2 mt-2 bg-yellow-300 hover:bg-yellow-400 w-full rounded-md"><router-link to="/dashboard">Dashboard</router-link></li>
 
