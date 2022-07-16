@@ -1,8 +1,8 @@
 <template>
-  <div class="p-4 sm:pb-16 sm:px-28">
+  <div class="p-4 md:pb-16">
     <h1 class="text-center font-semibold text-2xl my-4">Countries</h1>
 
-    <div class="grid sm:grid-cols-3 gap-8 overflow-auto place-content-center">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-auto justify-center">
       <Country 
         v-for="country in countries" 
         :key="country.id" 
