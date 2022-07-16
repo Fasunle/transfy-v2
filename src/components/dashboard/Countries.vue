@@ -1,6 +1,6 @@
 <template>
   <div class="p-4 md:pb-16">
-    <h1 class="text-center font-semibold text-2xl my-4">Countries</h1>
+    <h1 class="text-center text-3xl font-sans font-medium my-4">Countries</h1>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-auto justify-center">
       <Country 
