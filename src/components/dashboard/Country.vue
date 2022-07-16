@@ -1,5 +1,5 @@
 <template>
-  <div class="w-80 shadow-lg p-4">
+  <div class="w-80 shadow-lg p-4 font-serif text-lg">
     <div class="flex justify-between mt-4">
         <h2>Name: {{country.name}}</h2>
         <p>code: {{country.code}}</p>
