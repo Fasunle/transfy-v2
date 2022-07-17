@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-sm shadow p-4 text-sm">
+  <div class="max-w-xs shadow p-4 text-sm">
 
     <div class="flex justify-between items-center mt-2">
       <h2 class="text-base">Wallet Name</h2>
