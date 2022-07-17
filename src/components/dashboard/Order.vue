@@ -3,12 +3,12 @@
 
     <div class="flex justify-between mt-2">
       <h2 class="text-base">Status</h2>
-      <p class="p-2 rounded" :class="order.status == 'completed' ? 'bg-green-600 text-white': order.status == 'processing' ? 'bg-pink-400 text-gray-700': 'bg-red-400 text-gray-700'">{{order.status}}</p>
+      <p class="p-1 px-2 rounded text-lg font-mono" :class="order.status == 'completed' ? 'bg-green-600 text-white': order.status == 'processing' ? 'bg-pink-400 text-gray-700': 'bg-red-400 text-gray-700'">{{order.status}}</p>
     </div>
 
     <div class="flex justify-between mt-2">
       <h2 class="text-base">Type</h2>
-      <p>{{order.type}}</p>
+      <p class="text-lg font-mono" :class="order.type == 'received' ? 'text-green-600': order.type == 'bwr' ? 'text-pink-500': order.type == 'failed' ? 'text-red-800': order.type == 'deposit' ? 'text-pink-500': 'text-blue-700'">{{order.type}}</p>
     </div>
 
     <div class="flex justify-between mt-2">
