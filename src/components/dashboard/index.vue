@@ -14,10 +14,34 @@
                     class="mx-auto"
                 />
             </div>
-            <div class="sm:col-start-5 sm:col-span-full sm:row-span-full rounded shadow px-4 max-h-full overflow-y-scroll snap-center">
-                
+            <div class="sm:col-start-5 sm:col-span-full sm:row-span-full px-4 max-h-full overflow-y-scroll snap-center">
+                <div class="">
+                    <h2 class="text-center text-xl font-sans font-medium sticky top-0 bg-white py-4">Balance</h2>
 
-                
+                    <div class="grid lg:flex">
+                        <Balance
+                            v-for="balance in balances"
+                            :key="balance"
+                            :balance="balance"
+                            class="mx-auto mb-4"
+                        />
+                    </div>
+
+                </div>
+
+                <div class="">
+                    <h2 class="text-center text-xl font-sans font-medium sticky top-0 bg-white py-4">Countries</h2>
+
+                    <div class="grid lg:grid-cols-2">
+                        <Country 
+                            v-for="country in countries" 
+                            :key="country.id" 
+                            :country="country"
+                            class="mx-auto"
+                        />
+                    </div>
+
+                </div>
             </div>
 
         </div>
@@ -27,20 +51,29 @@
 <script>
 import {useStore} from '@/store';
 import Order from './Order.vue';
-import {orders, } from "../../data.json";
+import data from "../../data.json";
+import Balance from './Balance.vue';
+import Country from './Country.vue';
 
 
 export default {
-    components: { Order },
+    components: { Order, Balance, Country },
     setup(){
 
         const store = useStore()
 
-        // fetch orders and update global state
-        store.setOrders(orders);
+        // fetch data and update global state
+        store.setOrders(data.orders);
+        store.setBalances(data.balances);
+        store.setCountries(data.countries);
+
+        console.log(data.countries)
+
 
         return {
-            orders: store.orders
+            orders: store.orders,
+            balances: store.balances,
+            countries: store.countries
         }
     }
 }
