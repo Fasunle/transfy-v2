@@ -6,7 +6,9 @@ export const useStore = defineStore("main", {
     state: () => {
         return {
             countries: [],
-            info: []
+            info: [],
+            balances: [],
+            orders: [],
         }
     },
     actions: {
@@ -15,6 +17,12 @@ export const useStore = defineStore("main", {
         },
         setInfo(info){
             this.info = info;
+        },
+        setOrders(orders){
+            this.orders = orders;
+        },
+        setBalances(balances){
+            this.balances = balances;
         },
     }
 });
