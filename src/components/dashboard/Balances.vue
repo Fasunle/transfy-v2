@@ -15,6 +15,7 @@
 <script>
 import { useStore } from '@/store';
 import Balance from "./Balance.vue";
+import data from "../../data.json";
 
 
 export default {
@@ -23,41 +24,7 @@ export default {
 
       const store = useStore();
 
-      const balances = [
-        {
-            "id": "1",
-            "holder_id": "1",
-            "name": "KES Wallet",
-            "slug": "KES",
-            "description": null,
-            "balance": "511932",
-            "decimal_places": "2",
-            "created_at": "2021-07-25 12:29:07",
-            "updated_at": "2022-06-19 20:28:08"
-        },
-        {
-            "id": "2",
-            "holder_id": "1",
-            "name": "NGN Wallet",
-            "slug": "NGN",
-            "description": null,
-            "balance": "105765938",
-            "decimal_places": "2",
-            "created_at": "2021-07-25 12:29:07",
-            "updated_at": "2022-07-01 01:07:46"
-        },
-        {
-            "id": "3",
-            "holder_id": "1",
-            "name": "RWF Wallet",
-            "slug": "RWF",
-            "description": null,
-            "balance": "0",
-            "decimal_places": "2",
-            "created_at": "2021-07-25 12:29:07",
-            "updated_at": "2022-06-30 14:30:33"
-        }
-      ];
+      const balances = data.balances;
 
       store.setBalances(balances);
 
