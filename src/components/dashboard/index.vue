@@ -4,7 +4,7 @@
 
         <div class="dashboard grid sm:grid-cols-12 sm:grid-rows-6 gap-4">
 
-            <div class="sm:col-start-1 sm:col-span-4 sm:row-span-full rounded shadow px-4 max-h-full overflow-y-scroll snap-center">
+            <div class="sm:col-start-1 sm:col-span-4 sm:row-span-full px-4 max-h-full overflow-y-scroll snap-center">
                 <h2 class="text-center text-xl font-sans font-medium sticky top-0 bg-white py-4">Orders</h2>
 
                 <Order
