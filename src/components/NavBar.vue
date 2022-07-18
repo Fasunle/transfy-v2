@@ -63,7 +63,7 @@
         name: "NavBar",
         data(){
             return {
-                closeMenu: false,
+                closeMenu: true,
                 isAuthenticated: false
             }
         },
