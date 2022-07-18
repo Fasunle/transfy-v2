@@ -7,8 +7,8 @@ import router from './router';
 
 const pinia = createPinia();
 const auth = createAuth0({
-    domain: process.env.VUE_AUTH_DOMAIN,
-    client_id: process.env.VUE_CLIENT_ID,
+    domain: process.env.VUE_APP_AUTH_DOMAIN,
+    client_id: process.env.VUE_APP_CLIENT_ID,
     redirect_uri: window.location.origin
 });
 

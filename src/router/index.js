@@ -15,6 +15,7 @@ const routes = [
     },
     {
         path: "/dashboard",
+        alias: "/",
         name: "Dashboard",
         component: Dashboard
     },
