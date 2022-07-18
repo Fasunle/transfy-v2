@@ -24,7 +24,8 @@ export const useUserStore = defineStore("user", {
                 created_at: "",
                 session_id_status: "",
                 updated_at: ""
-            }
+            },
+            userAuth: false
         }
     },
     actions: {
@@ -33,6 +34,9 @@ export const useUserStore = defineStore("user", {
         },
         logoutUser(){
             this.user = {}
+        },
+        setUserAuthenticated(userAuth){
+            this.userAuth = userAuth;
         }
     }
 });

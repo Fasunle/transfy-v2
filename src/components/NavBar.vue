@@ -61,6 +61,7 @@
 
 <script>
 import { useAuth0 } from '@auth0/auth0-vue';
+import { useUserStore } from '@/store/user';
 
     export default {
         name: "NavBar",
@@ -72,23 +73,27 @@ import { useAuth0 } from '@auth0/auth0-vue';
         setup(){
 
             const {isAuthenticated, loginWithRedirect, logout: logoutUser, user} = useAuth0();
+            const store = useUserStore();
 
             return {
                 loginWithRedirect, 
                 logoutUser, 
                 isAuthenticated,
-                user
+                user,
+                setUserAuth: store.setUserAuthenticated
             }
         },
         methods: {
             toggle(){
                 this.closeMenu = !this.closeMenu;
+                this.setUserAuth(true);
             },
             login(){
                 this.loginWithRedirect();
             },
             logout(){
                 this.logoutUser();
+                this.setUserAuth(false);
             }
         }
     }
