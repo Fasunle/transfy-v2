@@ -1,9 +1,13 @@
 <template>
   <NavBar />
   <main class="flex gap-4 flex-col sm:flex-row items-center sm:items-start">
-    <Home class="hidden sm:block" />
-    <div class="w-full">
+    <Home class="hidden sm:block" v-if="userAuth" />
+    <div class="w-full" v-if="userAuth">
       <router-view/>
+    </div>
+
+    <div class="place-self-center place-items-center p-4 mx-auto" v-else>
+      <h1 class="text-center  text-3xl font-serif font-semibold">Please Login to view your dashboard</h1>
     </div>
 
   </main>
@@ -33,7 +37,8 @@ export default {
     store.loginUser(user);
 
     return {
-      user: store.user
+      user: store.user,
+      userAuth: store.userAuth
     }
   }
 }
@@ -41,4 +46,18 @@ export default {
 
 <style>
 #app {}
+
+/* 
+ * https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_hide_scrollbar_keep_func
+*/
+
+ /* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 </style>

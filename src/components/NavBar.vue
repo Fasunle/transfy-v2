@@ -15,14 +15,15 @@
                 <router-link to="/dashboard">Dashboard</router-link>
             </li>
             <li class="p-2" v-if="!isAuthenticated">
-                <button>Login</button>
+                <button @click="login">Login</button>
             </li>
             <li class="p-2" v-else>
-                <button>Logout</button>
+                <button @click="logout">Logout</button>
             </li>
         </ul>
         <div class="w-12 h-12">
-            <img class="rounded-full" src="../assets/user.png" alt="Current User">
+            <img class="rounded-full" v-if="user" :src="user?.picture" alt="Current User">
+            <img class="rounded-full" v-else src="../assets/user.png" alt="No Current User">
         </div>
     </nav>
     <!-- display this on smaller screen -->
@@ -32,10 +33,10 @@
                 <router-link to="/dashboard">Dashboard</router-link>
             </li>
             <li class="mt-4 p-2"  v-if="!isAuthenticated">
-                <button>Login</button>
+                <button @click="login">Login</button>
             </li>
             <li class="mt-4 p-2" v-else>
-                <button>Logout</button>
+                <button @click="logout">Logout</button>
             </li>
 
             <li class="mt-4 p-2">
@@ -59,17 +60,40 @@
 </template>
 
 <script>
+import { useAuth0 } from '@auth0/auth0-vue';
+import { useUserStore } from '@/store/user';
+
     export default {
         name: "NavBar",
         data(){
             return {
-                closeMenu: true,
-                isAuthenticated: false
+                closeMenu: true
+            }
+        },
+        setup(){
+
+            const {isAuthenticated, loginWithRedirect, logout: logoutUser, user} = useAuth0();
+            const store = useUserStore();
+
+            return {
+                loginWithRedirect, 
+                logoutUser, 
+                isAuthenticated,
+                user,
+                setUserAuth: store.setUserAuthenticated
             }
         },
         methods: {
             toggle(){
                 this.closeMenu = !this.closeMenu;
+                this.setUserAuth(true);
+            },
+            login(){
+                this.loginWithRedirect();
+            },
+            logout(){
+                this.logoutUser();
+                this.setUserAuth(false);
             }
         }
     }
